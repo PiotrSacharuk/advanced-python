@@ -21,10 +21,10 @@ def log_function_data(func):
 
 # Example use of the decorator
 @log_function_data
-def add(a, b):
+def add(a, b, password=""):
     """Add two numbers together."""
     return a + b
 
 
 # Calling the decorated function
-result = add(5, 3)
+result = add(5, 3, "!@#$!@#$")
