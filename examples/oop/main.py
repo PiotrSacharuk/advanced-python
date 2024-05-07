@@ -6,6 +6,5 @@ class MyClass:
         self.x = 2
 
 
-import pdb; pdb.set_trace()
 a = MyClass()
 print(a.__x)
