@@ -1,4 +1,4 @@
-class MyNumbers:
+class MyNumbers():
   def __iter__(self):
     self.a = 1
     return self
@@ -6,6 +6,7 @@ class MyNumbers:
   def __next__(self):
     x = self.a
     self.a += 1
+    print(f"The next itaration will be {self.a}")
     return x
 
 myclass = MyNumbers()

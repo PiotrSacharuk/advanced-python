@@ -25,3 +25,6 @@ print(next(obj))
 print(next(obj))
 print(next(obj))
 print(next(obj))
+
+# for x in obj:
+#     print(x)

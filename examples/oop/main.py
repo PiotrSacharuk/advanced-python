@@ -1,10 +1,13 @@
-class MyClass:
+class MetaClass(type):
+    def __new__(*args, **kwargs):
+        return super().__new__(*args, **kwargs)
 
+class MyClass(metaclass=MetaClass):
     def __init__(self):
-        self.__x = 0
-        self._x = 1
         self.x = 2
-
+    def update(self, x):
+        self.x = x
+        print(f"New value is {x}")
 
 a = MyClass()
-print(a.__x)
+a.update(5)

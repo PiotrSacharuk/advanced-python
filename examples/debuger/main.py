@@ -1,7 +1,8 @@
 class ItemListClass:
     def __init__(self, item_list=[]):
-        self.item_list = item_list
+        self.item_list = item_list[:]
 
+# import pdb; pdb.set_trace()
 
 for item in range(4):
     obj = ItemListClass()

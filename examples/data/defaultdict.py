@@ -8,6 +8,6 @@ data = [
 ]
 
 for name, group in data:
-    grouped_data[group].append(name)
+    grouped_data.setdefault(group, []).append(name)
 
 print("Grouped Data:", dict(grouped_data))
