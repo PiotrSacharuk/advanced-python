@@ -2,10 +2,10 @@
 class LoggedMeta(type):
     def __new__(cls, name, bases, dct):
         print(f"Creating class {name}")
-        import pdb; pdb.set_trace()
         # Add a method to the class dynamically
         dct['greet'] = lambda self: print(f"Hello from {name}")
-        return super().__new__(cls, name, bases, dct)
+        instance = super().__new__(cls, name, bases, dct)
+        return instance
 
 # Example usage of the LoggedMeta metaclass
 class ExampleClass(metaclass=LoggedMeta):
