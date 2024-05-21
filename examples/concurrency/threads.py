@@ -23,7 +23,7 @@ def main():
 
     # Start the prime-finding threads
     threads = []
-    for _ in range(4):
+    for _ in range(6):
         thread = threading.Thread(target=find_primes, args=(stop_event,))
         thread.start()
         threads.append(thread)

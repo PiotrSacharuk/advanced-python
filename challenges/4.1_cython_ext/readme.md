@@ -1,42 +1,39 @@
-# Python Coding Challenge: Implementing and Benchmarking a Cython Function
+# Python Coding Challenge: Optimizing a Prime-Checking Function with Cython
+
 
 ## Background:
-Cython is a programming language that makes writing C extensions for Python as easy as writing Python itself. It's particularly effective for speeding up CPU-bound tasks that involve loops, numerical computations, and more detailed type definitions.
+The is_prime function is a typical example of a CPU-bound task that can benefit significantly from Cython’s optimizations, such as compiling to C, type declarations, and avoiding some of Python's overhead.
 
 ## Task:
-Your task is to implement a function in Cython that calculates the sum of squares for a large list of integers, and then compare the performance of this Cython implementation with a pure Python implementation.
+Convert the provided Python is_prime function to Cython, compile it, and compare its performance against the original Python version. The goal is to demonstrate the performance benefits of using Cython for computational heavy tasks.
 
 ## Steps to Complete the Challenge:
 
-1. Setup Environment:
-
-* Ensure you have Cython installed (pip install cython).
-* You will also need a C compiler installed on your system.
-
-2. Create a Python Function (Baseline):
-
-* Write a Python function to compute the sum of squares of a list of integers.
+1. Python Function (Baseline):
+Start by reviewing the pure Python implementation of the is_prime function.
 python
+2. Setup Cython Environment:
+   * Ensure Cython is installed.
+   * You will also need a C compiler setup as previously described.
+3. Create & compile the Cython Function:
+   * Write the Cython version of the is_prime function in a .pyx file. Use type declarations to improve performance.
+   * Create a setup.py file for compiling the Cython code:
+    ```python
+    from setuptools import setup
+    from Cython.Build import cythonize
 
-3. Implement the Function in Cython:
-
-* Create a Cython file (sum_of_squares.pyx) to implement the same functionality.
-cython
-* Write a setup file (setup.py) to compile the Cython code
-* Compile the Cython module by running python setup.py build_ext --inplace in the command line.
-
-4. Benchmark Both Implementations:
-* Use a large list of integers to test both the Python and Cython functions.
-* Measure the execution time using timeit module.
-python
-
+    setup(
+        ext_modules = cythonize("prime_check.pyx")
+    )
+    ```
+   * Compile the Cython module by running python setup.py build_ext --inplace.
+4. Benchmarking:
+   * Use a large set of numbers to test both the Python and Cython functions using the timeit module.
 5. Compare and Analyze Results:
-
-* Compare the execution times of the Python and Cython implementations.
-* Discuss why the Cython version is faster or slower based on your observations.
+   * Discuss the performance of the Python vs. Cython implementation.
+   * Evaluate how effectively type declarations and Cython optimizations improved the function.
 
 ## Challenge Goals:
-
-* Implement and compile a Cython function.
-* Measure and compare the performance of a pure Python implementation versus a Cython implementation.
-* Understand how Cython can be used to speed up numerical computations in Python.
+* Understand how to convert Python code into Cython for performance improvements.
+* Learn how to set up and compile Cython modules.
+* Demonstrate the potential speed gains from using Cython, especially in computational tasks.

@@ -1,20 +1,20 @@
 import cProfile
+from performance import fibonacci, is_prime
+
+# def fibonacci(n):
+#     if n <= 1:
+#         return n
+#     else:
+#         return fibonacci(n-1) + fibonacci(n-2)
 
 
-def fibonacci(n):
-    if n <= 1:
-        return n
-    else:
-        return fibonacci(n-1) + fibonacci(n-2)
-
-
-def is_prime(num):
-    if num < 2:
-        return False
-    for i in range(2, num):
-        if num % i == 0:
-            return False
-    return True
+# def is_prime(num):
+#     if num < 2:
+#         return False
+#     for i in range(2, num):
+#         if num % i == 0:
+#             return False
+#     return True
 
 
 def compute_operations():

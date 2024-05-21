@@ -1,9 +1,9 @@
 import time
 
 import numpy as np
-# from numba import njit
+from numba import njit
 
-# @njit
+@njit
 def some_func(n):
     z = np.zeros((n, n))
     for i in range(n):

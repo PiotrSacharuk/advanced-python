@@ -1,17 +1,21 @@
-from numba import jit
+import time
+# from numba import njit
 
 
-@jit(nopython=True)
+# @njit
 def func(a, b):
     return a + b
 
 
-@jit(nopython=True)
+# @njit
 def run():
     a = 0
     for _ in range(100000000):
         a += func(3, 5)
     print(a)
 
-
+start = time.time()
 run()
+end = time.time()
+print(end - start)
+
